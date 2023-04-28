@@ -1,0 +1,120 @@
+.blog {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blog-content {
+    width: 90%;
+    min-height: 0;
+    padding: 0 15px;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.blog-content h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin: 25px;
+    position: relative;
+}
+
+.blog-content h2::before {
+    width: 15px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    top: calc(50% - 5px);
+    left: -35px;
+}
+
+.blog-content h2::after {
+    width: 15px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    top: calc(50% - 5px);
+    right: -35px;
+}
+
+
+.posts {
+    max-width: 1000px;
+    min-height: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.post-container {
+    width: 300px;
+    height: 300px;
+    margin: 15px;
+    border-radius: 8px;
+    transition: all .3s ease;
+    position: relative;
+}
+
+.post {
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    transition: all .3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.post-txt {
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 8px;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transform: rotateY(180deg);
+}
+
+.post-container:hover > .post-txt {
+    z-index: 5;
+}
+
+.post-container:hover {
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 1100px){
+    .posts {
+        max-width: 700px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+  }
+
+  @media screen and (max-width: 800px){
+    .posts {
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
